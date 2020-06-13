@@ -1,0 +1,70 @@
+<div class="card mt-5">
+  <div class="card-body">
+      <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+          <!-- TO UPDATE -->
+          <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="productService.selectedProduct.$key">
+
+          <div class="form-group">
+            <input 
+              type="text"
+              class="form-control"
+              name="NOMBRE"
+              #name="ngModel"
+              [(ngModel)]="productService.selectedProduct.NOMBRE"
+              placeholder="NOMBRE"
+              >
+          </div>
+          <div class="form-group">
+              <input 
+                type="text"
+                class="form-control"
+                name="APELLIDOS"
+                #category="ngModel"
+                [(ngModel)]="productService.selectedProduct.APELLIDOS"
+                placeholder="APELLIDOS"
+                >
+            </div>
+          <div class="form-group">
+            <input 
+              type="text"
+              class="form-control"
+              name="NOCONTROL"
+              #location="ngModel"
+              [(ngModel)]="productService.selectedProduct.NOCONTROL"
+              placeholder="NOCONTROL"
+              >
+          </div>
+          <div class="form-group"> 
+              <input 
+                type="number"
+                class="form-control"
+                name="CLAVE_MATERIA"
+                #price="ngModel"
+                [(ngModel)]="productService.selectedProduct.CLAVE_MATERIA"
+                placeholder="CLAVE_MATERIA"
+                >
+           
+          </div>
+          <div class="form-group"> 
+            <input 
+              type="number"
+              class="form-control"
+              name="CALIFICACION"
+              #price="ngModel"
+              [(ngModel)]="productService.selectedProduct.CALIFICACION"
+              placeholder="CALIFICACION"
+              >
+         
+        </div>
+
+          <div class="form-group">
+            <button class="btn btn-primary" type="submit">
+                <i class="fas fa-plus-circle"></i> AÑADIR
+            </button>
+            <button class="btn btn-secondary" type="reset" (click)="resetForm(productForm)">
+                <i class="fas fa-sync-alt"></i> BORRAR
+            </button>
+          </div>
+        </form>
+  </div>
+</div>
